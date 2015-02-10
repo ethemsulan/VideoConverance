@@ -1,21 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -87,15 +70,6 @@ function showWebcam(){
       session.on("streamCreated", function(event) {
         session.subscribe(event.stream);
       });
-     
-      var session = OT.initSession(apiKey, sessionId);
-      session.on("streamCreated", function (event) {
-        session.subscribe(event.stream);
-      });
-      // Replace with a valid token.
-      // See http://tokbox.com/opentok/tutorials/create-token/
-      session.connect("T1==cGFydG5lcl9pZD0xMTI3JnNpZz1kYjkzODllNzQ1Njg5MGFiYjJjZWJmODI3MmVlZWVmYzEyOTYxZjNmOnNlc3Npb25faWQ9MV9NWDR4TVRJM2ZuNHhOREl6TlRZNE16STBNekE1ZmpKM1QxQkdaVFZEUkZCaFNIQnVjRTFET1VVclYyczRUMzVRZmcmY3JlYXRlX3RpbWU9MTQyMzU2ODM1MCZub25jZT0wLjA1NjUxNTM2MTE4MjM5MTY0NCZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDIzNjU0NzUw", function (error) {
-         publisher = OT.initPublisher();
-         session.publish(publisher);
-      });
-}
+
+};
+
