@@ -37,9 +37,9 @@ var app = {
               // Initialize API key, session, and token...
       // Think of a session as a room, and a token as the key to get in to the room
       // Sessions and tokens are generated on your server and passed down to the client
-      var apiKey = "45147981";
-      var sessionId = "2_MX40NTE0Nzk4MX5-MTQyMzU1OTAxOTM2OH56QUsyM21FaHUrTU1mcTMzOGJzOVhtaDV-fg";
-      var token = "T1==cGFydG5lcl9pZD00NTE0Nzk4MSZzaWc9ZWI1MmViYjg3NTg3YjY4ZGU3ZmI3NzJlZDhlMTc0MDg4ODJhMTkwNTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTBOems0TVg1LU1UUXlNelUxT1RBeE9UTTJPSDU2UVVzeU0yMUZhSFVyVFUxbWNUTXpPR0p6T1ZodGFEVi1mZyZjcmVhdGVfdGltZT0xNDIzNTU5MTExJm5vbmNlPTAuMTc4Mzc4Njk4NTAyMTQ5MDUmZXhwaXJlX3RpbWU9MTQyNjE1MDk1Mw==";
+      var apiKey = "45150012";
+      var sessionId = "2_MX40NTE1MDAxMn5-MTQyMzU2MDQwNzI2MH5ucWRiMVVNRHVwWHBTRnlXUllIVUdNMHR-fg";
+      var token = "T1==cGFydG5lcl9pZD00NTE1MDAxMiZzaWc9YjA5ZjBmNmUxZTVhODJiY2VhYmZmMmNmNDQ3NzQ2ZWJiNGViZTZmZTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTFNREF4TW41LU1UUXlNelUyTURRd056STJNSDV1Y1dSaU1WVk5SSFZ3V0hCVFJubFhVbGxJVlVkTk1IUi1mZyZjcmVhdGVfdGltZT0xNDIzNTYwNDU5Jm5vbmNlPTAuNjM0MjE5Nzg1MjI5MDQyMiZleHBpcmVfdGltZT0xNDI2MTUyMzcy";
 
       // Initialize session, set up event listeners, and connect
       var session = OT.initSession(apiKey, sessionId);
