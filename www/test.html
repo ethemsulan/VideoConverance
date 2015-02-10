@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    
+    <link href="/css/demos.css" type="text/css" rel="stylesheet" >
+  </head>
+  <body>
+    <script src="//static.opentok.com/webrtc/v2.2/js/opentok.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      OT.setLogLevel(OT.DEBUG);
+
+      var apiKey = "45150012";
+      var sessionId = "2_MX40NTE1MDAxMn5-MTQyMzU2MDQwNzI2MH5ucWRiMVVNRHVwWHBTRnlXUllIVUdNMHR-fg";
+      var token = "T1==cGFydG5lcl9pZD00NTE1MDAxMiZzaWc9YjA5ZjBmNmUxZTVhODJiY2VhYmZmMmNmNDQ3NzQ2ZWJiNGViZTZmZTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTFNREF4TW41LU1UUXlNelUyTURRd056STJNSDV1Y1dSaU1WVk5SSFZ3V0hCVFJubFhVbGxJVlVkTk1IUi1mZyZjcmVhdGVfdGltZT0xNDIzNTYwNDU5Jm5vbmNlPTAuNjM0MjE5Nzg1MjI5MDQyMiZleHBpcmVfdGltZT0xNDI2MTUyMzcy";
+
+
+      // Replace with your API key (see https://dashboard.tokbox.com/projects)
+      // and a valid session ID (see http://tokbox.com/opentok/tutorials/create-session/):
+      var session = OT.initSession(apiKey, sessionId);
+      session.on("streamCreated", function (event) {
+        session.subscribe(event.stream);
+      });
+      // Replace with a valid token.
+      // See http://tokbox.com/opentok/tutorials/create-token/
+      session.connect(token, function (error) {
+         publisher = OT.initPublisher();
+         session.publish(publisher);
+      });
+    </script>
+  </body>
+</html>

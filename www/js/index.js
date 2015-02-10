@@ -35,25 +35,6 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
               // Initialize API key, session, and token...
-      // Think of a session as a room, and a token as the key to get in to the room
-      // Sessions and tokens are generated on your server and passed down to the client
-      var apiKey = "45150012";
-      var sessionId = "2_MX40NTE1MDAxMn5-MTQyMzU2MDQwNzI2MH5ucWRiMVVNRHVwWHBTRnlXUllIVUdNMHR-fg";
-      var token = "T1==cGFydG5lcl9pZD00NTE1MDAxMiZzaWc9YjA5ZjBmNmUxZTVhODJiY2VhYmZmMmNmNDQ3NzQ2ZWJiNGViZTZmZTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTFNREF4TW41LU1UUXlNelUyTURRd056STJNSDV1Y1dSaU1WVk5SSFZ3V0hCVFJubFhVbGxJVlVkTk1IUi1mZyZjcmVhdGVfdGltZT0xNDIzNTYwNDU5Jm5vbmNlPTAuNjM0MjE5Nzg1MjI5MDQyMiZleHBpcmVfdGltZT0xNDI2MTUyMzcy";
-
-      // Initialize session, set up event listeners, and connect
-      var session = OT.initSession(apiKey, sessionId);
- 
-      session.on("streamCreated", function(event) {
-        session.subscribe(event.stream);
-      });
-     
-      session.connect(token, function(error) {
-        var publisher = OT.initPublisher("myPublisherDiv",{width:400, height:300});
-        
-        session.publish(publisher);
-      });
-      
          
     },
     // Update DOM on a Received Event
@@ -68,3 +49,53 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function showWebcam(){
+    /*
+      var apiKey = "45150012";
+      var sessionId = "2_MX40NTE1MDAxMn5-MTQyMzU2MDQwNzI2MH5ucWRiMVVNRHVwWHBTRnlXUllIVUdNMHR-fg";
+      var token = "T1==cGFydG5lcl9pZD00NTE1MDAxMiZzaWc9YjA5ZjBmNmUxZTVhODJiY2VhYmZmMmNmNDQ3NzQ2ZWJiNGViZTZmZTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTFNREF4TW41LU1UUXlNelUyTURRd056STJNSDV1Y1dSaU1WVk5SSFZ3V0hCVFJubFhVbGxJVlVkTk1IUi1mZyZjcmVhdGVfdGltZT0xNDIzNTYwNDU5Jm5vbmNlPTAuNjM0MjE5Nzg1MjI5MDQyMiZleHBpcmVfdGltZT0xNDI2MTUyMzcy";
+
+
+      // Replace with your API key (see https://dashboard.tokbox.com/projects)
+      // and a valid session ID (see http://tokbox.com/opentok/tutorials/create-session/):
+      var session = OT.initSession(apiKey, sessionId);
+      session.on("streamCreated", function (event) {
+        session.subscribe(event.stream);
+      });
+      // Replace with a valid token.
+      // See http://tokbox.com/opentok/tutorials/create-token/
+      session.connect(token, function (error) {
+         publisher = OT.initPublisher();
+         session.publish(publisher);
+      });
+      */
+     // Think of a session as a room, and a token as the key to get in to the room
+      // Sessions and tokens are generated on your server and passed down to the client
+      var apiKey = "45150012";
+      var sessionId = "2_MX40NTE1MDAxMn5-MTQyMzU2MDQwNzI2MH5ucWRiMVVNRHVwWHBTRnlXUllIVUdNMHR-fg";
+      var token = "T1==cGFydG5lcl9pZD00NTE1MDAxMiZzaWc9YjA5ZjBmNmUxZTVhODJiY2VhYmZmMmNmNDQ3NzQ2ZWJiNGViZTZmZTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5URTFNREF4TW41LU1UUXlNelUyTURRd056STJNSDV1Y1dSaU1WVk5SSFZ3V0hCVFJubFhVbGxJVlVkTk1IUi1mZyZjcmVhdGVfdGltZT0xNDIzNTYwNDU5Jm5vbmNlPTAuNjM0MjE5Nzg1MjI5MDQyMiZleHBpcmVfdGltZT0xNDI2MTUyMzcy";
+
+      // Initialize session, set up event listeners, and connect
+      var session = OT.initSession(apiKey, sessionId);
+       session.connect(token, function(error) {
+        // var publisher = OT.initPublisher("myPublisherDiv",{width:400, height:300});
+        var publisher = OT.initPublisher("myPublisherDiv");
+        session.publish(publisher);
+      });
+      
+      session.on("streamCreated", function(event) {
+        session.subscribe(event.stream);
+      });
+     
+      var session = OT.initSession(apiKey, sessionId);
+      session.on("streamCreated", function (event) {
+        session.subscribe(event.stream);
+      });
+      // Replace with a valid token.
+      // See http://tokbox.com/opentok/tutorials/create-token/
+      session.connect("T1==cGFydG5lcl9pZD0xMTI3JnNpZz1kYjkzODllNzQ1Njg5MGFiYjJjZWJmODI3MmVlZWVmYzEyOTYxZjNmOnNlc3Npb25faWQ9MV9NWDR4TVRJM2ZuNHhOREl6TlRZNE16STBNekE1ZmpKM1QxQkdaVFZEUkZCaFNIQnVjRTFET1VVclYyczRUMzVRZmcmY3JlYXRlX3RpbWU9MTQyMzU2ODM1MCZub25jZT0wLjA1NjUxNTM2MTE4MjM5MTY0NCZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDIzNjU0NzUw", function (error) {
+         publisher = OT.initPublisher();
+         session.publish(publisher);
+      });
+}
