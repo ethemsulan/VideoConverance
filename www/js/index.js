@@ -49,7 +49,8 @@ var app = {
       });
      
       session.connect(token, function(error) {
-        var publisher = OT.initPublisher();
+        var publisher = OT.initPublisher("myPublisherDiv",{width:400, height:300});
+        
         session.publish(publisher);
       });
       
